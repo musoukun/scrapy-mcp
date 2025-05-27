@@ -16,6 +16,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 📱 **SPA対応**: React/Vue/Angularアプリケーション対応
 - 🔧 **アクションシステム**: 複数操作の連続実行
 - 🎯 **ビューポート制御**: カスタムサイズ設定
+- 📦 **一括スクレイピング**: 複数URLの同時処理機能
+- 🔒 **プロキシ対応**: HTTP/HTTPS/SOCKS プロキシサポート
+- ⚡ **並行制御**: カスタマイズ可能な同時実行数
+- 🔁 **リトライ機能**: 自動エラー回復システム
+- ⏱️ **レート制限**: リクエスト間隔の調整機能
 
 ### Changed
 - 📦 **プロジェクト名**: `simple-scraper-mcp` → `advanced-scraper-mcp`
