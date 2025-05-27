@@ -1,0 +1,32 @@
+{
+	"name": "advanced-scraper-mcp",
+	"version": "2.0.0",
+	"description": "高機能なスクレイピングMCPサーバー（HTTP + Puppeteer対応）",
+	"main": "dist/index.js",
+	"type": "module",
+	"scripts": {
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"dev": "tsx --watch src/index.ts",
+		"clean": "rimraf dist",
+		"prebuild": "npm run clean",
+		"install-deps": "npm install"
+	},
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.0.0",
+		"cheerio": "^1.0.0",
+		"node-fetch": "^3.3.2",
+		"puppeteer": "^24.9.0",
+		"puppeteer-core": "^24.9.0"
+	},
+	"devDependencies": {
+		"@types/cheerio": "^0.22.0",
+		"@types/node": "^20.0.0",
+		"rimraf": "^5.0.0",
+		"tsx": "^4.0.0",
+		"typescript": "^5.0.0"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	}
+}
