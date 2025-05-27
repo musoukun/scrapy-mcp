@@ -1,6 +1,6 @@
 # テストスイート
 
-Advanced Scraper MCPの包括的なテストスイートです。
+Scrapy MCPの包括的なテストスイートです。
 
 ## 📋 テスト構成
 

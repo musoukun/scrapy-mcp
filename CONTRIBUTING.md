@@ -1,6 +1,6 @@
 # コントリビューションガイド
 
-Advanced Scraper MCPプロジェクトへのコントリビューションをお考えいただき、ありがとうございます！
+ScrapyMCPプロジェクトへのコントリビューションをお考えいただき、ありがとうございます！
 
 ## 🤝 コントリビューション方法
 
@@ -8,8 +8,8 @@ Advanced Scraper MCPプロジェクトへのコントリビューションをお
 
 ```bash
 # リポジトリをフォーク後、クローン
-git clone https://github.com/your-username/advanced-scraper-mcp.git
-cd advanced-scraper-mcp
+git clone https://github.com/your-username/scrapy-mcp.git
+cd scrapy-mcp
 
 # 依存関係をインストール
 npm install

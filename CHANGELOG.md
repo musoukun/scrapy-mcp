@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ⏱️ **レート制限**: リクエスト間隔の調整機能
 
 ### Changed
-- 📦 **プロジェクト名**: `simple-scraper-mcp` → `advanced-scraper-mcp`
+- 📦 **プロジェクト名**: `simple-scraper-mcp` → `scrapy-mcp`
 - 🏗️ **アーキテクチャ**: JavaScript → TypeScript完全移行
 - 📝 **API設計**: より直感的で柔軟なパラメータ構造
 - 🔄 **ブラウザ管理**: 効率的なリソース再利用システム
@@ -69,6 +69,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## サポート
 
-- 🐛 **バグ報告**: [GitHub Issues](https://github.com/your-username/advanced-scraper-mcp/issues)
-- 💡 **機能要望**: [GitHub Issues](https://github.com/your-username/advanced-scraper-mcp/issues)
+- 🐛 **バグ報告**: [GitHub Issues](https://github.com/your-username/scrapy-mcp/issues)
+- 💡 **機能要望**: [GitHub Issues](https://github.com/your-username/scrapy-mcp/issues)
 - 📧 **その他**: your.email@example.com 

@@ -366,8 +366,8 @@ const BATCH_SCRAPE_TOOL: Tool = {
 // MCPサーバーの初期化
 const server = new Server(
 	{
-		name: "simple-scraper-mcp",
-		version: "1.0.0",
+		name: "scrapy-mcp",
+		version: "2.0.0",
 	},
 	{
 		capabilities: {
@@ -915,12 +915,12 @@ async function executeAction(
 // サーバーの起動
 async function main(): Promise<void> {
 	try {
-		console.error("Simple Scraper MCP サーバーを起動中...");
+		console.error("Scrapy MCP サーバーを起動中...");
 
 		const transport = new StdioServerTransport();
 		await server.connect(transport);
 
-		console.error("Simple Scraper MCP サーバーが正常に起動しました");
+		console.error("Scrapy MCP サーバーが正常に起動しました");
 
 		// 終了シグナルのハンドリング
 		process.on("SIGINT", cleanup);
