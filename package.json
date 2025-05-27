@@ -28,5 +28,24 @@
 	},
 	"engines": {
 		"node": ">=18.0.0"
-	}
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/your-username/advanced-scraper-mcp.git"
+	},
+	"keywords": [
+		"mcp",
+		"scraping",
+		"web-scraping",
+		"puppeteer",
+		"cheerio",
+		"typescript",
+		"model-context-protocol"
+	],
+	"author": "Your Name <your.email@example.com>",
+	"bugs": {
+		"url": "https://github.com/your-username/advanced-scraper-mcp/issues"
+	},
+	"homepage": "https://github.com/your-username/advanced-scraper-mcp#readme"
 }

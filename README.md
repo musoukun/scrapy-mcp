@@ -1,123 +1,226 @@
-# Advanced Scraper MCP サーバー
+# 🚀 Advanced Scraper MCP
 
-無料のWebスクレイピングMCPサーバーです。基本的なHTTPスクレイピングとPuppeteerによる高度なスクレイピングに対応しています。
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white)](https://nodejs.org/)
 
-## 機能
+**高機能なWebスクレイピングMCPサーバー** - Model Context Protocol (MCP) 対応
 
-### 🔧 simple_scrape
-- 基本的なHTTPスクレイピング
-- 高速で軽量
-- 静的コンテンツに最適
-- CSSセレクターでの要素抽出
+基本的なHTTPスクレイピングから、JavaScript実行が必要な動的サイトまで対応した、TypeScript製の高性能スクレイピングツールです。
 
-### 🚀 puppeteer_scrape
-- JavaScript実行対応
-- SPA（Single Page Application）対応
-- スクリーンショット撮影
-- インタラクティブ操作（クリック、入力など）
-- 動的コンテンツの取得
+## ✨ 特徴
 
-## インストール
+### 🔧 Simple Scrape
+- ⚡ **高速軽量**: 基本的なHTTPリクエストベース
+- 📄 **静的コンテンツ**: HTML/CSS/テキスト抽出
+- 🎯 **CSSセレクター**: 精密な要素抽出
+- 🛡️ **型安全**: TypeScript完全対応
 
-```powershell
-cd D:\simple-scraper-mcp
+### 🚀 Puppeteer Scrape
+- 🌐 **JavaScript実行**: 動的コンテンツ完全対応
+- 📱 **SPA対応**: React/Vue/Angularアプリ
+- 📸 **スクリーンショット**: 高品質画像キャプチャ
+- 🖱️ **インタラクション**: クリック・入力・スクロール
+- ⏱️ **待機制御**: 要素・時間ベース待機
+
+## 🚀 クイックスタート
+
+### インストール
+
+```bash
+# リポジトリをクローン
+git clone https://github.com/your-username/advanced-scraper-mcp.git
+cd advanced-scraper-mcp
+
+# 依存関係をインストール
 npm install
+
+# TypeScriptをビルド
 npm run build
 ```
 
-## 使用方法
+### 基本的な使用方法
 
-### スタンドアロンで実行
-```powershell
+```bash
+# 開発モード（ファイル監視）
+npm run dev
+
+# 本番モード
 npm start
 ```
 
-### 開発モード
-```powershell
-npm run dev
-```
+## 🔧 Claude Desktop 設定
 
-### Claude Desktop での設定
+Claude Desktop の設定ファイルに以下を追加：
 
-Claude Desktop の設定ファイル（`%APPDATA%\Claude\claude_desktop_config.json`）に以下を追加：
+**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 ```json
 {
   "mcpServers": {
     "advanced-scraper": {
       "command": "node",
-      "args": ["<path_to_mcpfolder>\\dist\\index.js"]
+      "args": ["path/to/advanced-scraper-mcp/dist/index.js"]
     }
   }
 }
 ```
 
-## 使用例
+## 📖 使用例
 
 ### 基本的なスクレイピング
+
 ```
 simple_scrape を使用して https://example.com からテキストを取得
 ```
 
-### JavaScript実行が必要なサイト
+### 特定要素の抽出
+
 ```
-puppeteer_scrape を使用して動的なコンテンツを取得:
+simple_scrape でタイトルを取得:
+- URL: https://news.ycombinator.com
+- selector: .titleline > a
+- format: text
+```
+
+### JavaScript必須サイト
+
+```
+puppeteer_scrape で動的コンテンツを取得:
 - URL: https://spa-example.com
-- waitFor: 3000 (3秒待機)
+- waitFor: 3000
 - format: text
 ```
 
 ### スクリーンショット撮影
+
 ```
-puppeteer_scrape でスクリーンショットを撮影:
+puppeteer_scrape でスクリーンショット:
 - URL: https://example.com
 - format: screenshot
-- viewport: width: 1920, height: 1080
+- viewport: { width: 1920, height: 1080 }
 ```
 
-### インタラクティブ操作
+### フォーム操作
+
 ```
-puppeteer_scrape でフォーム入力:
-- URL: https://example.com/form
+puppeteer_scrape でログイン:
+- URL: https://example.com/login
 - actions:
-  - type: "type", selector: "#username", text: "testuser"
-  - type: "type", selector: "#password", text: "password"
-  - type: "click", selector: "#submit"
+  - { type: "type", selector: "#username", text: "user" }
+  - { type: "type", selector: "#password", text: "pass" }
+  - { type: "click", selector: "#submit" }
 - waitFor: 2000
 ```
 
-## 制限事項
+## 🛠️ API リファレンス
 
 ### simple_scrape
-- JavaScriptは実行されません
-- 静的コンテンツのみ
+
+| パラメータ | 型 | 必須 | 説明 |
+|-----------|---|------|------|
+| `url` | string | ✅ | スクレイピング対象URL |
+| `selector` | string | ❌ | CSSセレクター |
+| `format` | `"text"` \| `"html"` | ❌ | 出力形式（デフォルト: "text"） |
 
 ### puppeteer_scrape
-- リソース使用量が多い
-- 初回起動時にChromiumのダウンロードが必要
-- 一部のCAPTCHA保護サイトでは動作しない場合があります
 
-## 技術仕様
+| パラメータ | 型 | 必須 | 説明 |
+|-----------|---|------|------|
+| `url` | string | ✅ | スクレイピング対象URL |
+| `selector` | string | ❌ | CSSセレクター |
+| `format` | `"text"` \| `"html"` \| `"screenshot"` | ❌ | 出力形式 |
+| `waitFor` | number | ❌ | 待機時間（ミリ秒） |
+| `waitForSelector` | string | ❌ | 要素の読み込み待機 |
+| `headless` | boolean | ❌ | ヘッドレスモード（デフォルト: true） |
+| `viewport` | object | ❌ | ビューポートサイズ |
+| `actions` | array | ❌ | 実行アクション |
 
-- **Node.js**: 18.0.0 以上
-- **TypeScript**: 型安全な実装
-- **Puppeteer**: 最新のChromiumエンジン
-- **Cheerio**: 高速なHTML解析
-- **MCP SDK**: Model Context Protocol 対応
+### アクション種類
 
-## ライセンス
+| アクション | 必須パラメータ | オプション | 説明 |
+|-----------|---------------|-----------|------|
+| `click` | `selector` | `delay` | 要素をクリック |
+| `type` | `selector`, `text` | `delay` | テキスト入力 |
+| `wait` | - | `delay` | 時間待機 |
+| `scroll` | - | `delay` | ページスクロール |
 
-MIT License - 商用利用可能
+## 🏗️ 開発
 
-## トラブルシューティング
+### プロジェクト構造
 
-### Puppeteerでエラーが発生する場合
-```powershell
-# Chromiumの手動インストール
-npx puppeteer browsers install chrome
+```
+advanced-scraper-mcp/
+├── src/
+│   └── index.ts          # メインソースコード
+├── dist/                 # ビルド出力
+│   ├── index.js
+│   └── index.d.ts
+├── package.json          # 依存関係・スクリプト
+├── tsconfig.json         # TypeScript設定
+├── LICENSE               # MITライセンス
+└── README.md            # このファイル
 ```
 
-### メモリ不足の場合
-- `headless: true` を使用してヘッドレスモードで実行
-- 不要なページは速やかに閉じる
-- 大量のページを処理する場合は適切な間隔を設ける
+### 利用可能なスクリプト
+
+```bash
+npm run build     # TypeScriptコンパイル
+npm run dev       # 開発モード（ファイル監視）
+npm start         # 本番モード
+npm run clean     # ビルドファイル削除
+```
+
+### 開発環境要件
+
+- **Node.js**: 18.0.0 以上
+- **TypeScript**: 5.0 以上
+- **OS**: Windows, macOS, Linux
+
+## 🔒 セキュリティ
+
+- ✅ サンドボックス化されたブラウザ実行
+- ✅ 適切なUser-Agent設定
+- ✅ リソース制限とタイムアウト
+- ⚠️ 責任あるスクレイピングを心がけてください
+
+## ⚠️ 制限事項
+
+### Simple Scrape
+- JavaScriptは実行されません
+- 静的コンテンツのみ対応
+
+### Puppeteer Scrape
+- 高いリソース使用量
+- 初回起動時のChromiumダウンロード
+- 一部のCAPTCHA保護サイトでは制限あり
+
+## 🤝 コントリビューション
+
+1. このリポジトリをフォーク
+2. フィーチャーブランチを作成 (`git checkout -b feature/amazing-feature`)
+3. 変更をコミット (`git commit -m 'Add amazing feature'`)
+4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
+5. プルリクエストを作成
+
+## 📝 ライセンス
+
+このプロジェクトは [MIT License](LICENSE) の下で公開されています。
+
+## 🙏 謝辞
+
+- [Model Context Protocol](https://modelcontextprotocol.io/) - MCPフレームワーク
+- [Puppeteer](https://pptr.dev/) - ブラウザ自動化
+- [Cheerio](https://cheerio.js.org/) - サーバーサイドjQuery
+- [TypeScript](https://www.typescriptlang.org/) - 型安全なJavaScript
+
+## 📞 サポート
+
+- 🐛 **バグ報告**: [Issues](https://github.com/your-username/advanced-scraper-mcp/issues)
+- 💡 **機能要望**: [Issues](https://github.com/your-username/advanced-scraper-mcp/issues)
+- 📧 **その他**: your.email@example.com
+
+---
+
+⭐ このプロジェクトが役に立った場合は、スターをつけていただけると嬉しいです！
