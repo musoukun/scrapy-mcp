@@ -46,7 +46,7 @@ Claude Desktop の設定ファイル（`%APPDATA%\Claude\claude_desktop_config.j
   "mcpServers": {
     "advanced-scraper": {
       "command": "node",
-      "args": ["D:\\simple-scraper-mcp\\dist\\index.js"]
+      "args": ["<path_to_mcpfolder>\\dist\\index.js"]
     }
   }
 }
