@@ -22,6 +22,14 @@
 - 📸 **スクリーンショット**: 高品質画像キャプチャ
 - 🖱️ **インタラクション**: クリック・入力・スクロール
 - ⏱️ **待機制御**: 要素・時間ベース待機
+- 🔒 **プロキシ対応**: HTTP/HTTPS/SOCKS プロキシサポート
+
+### 📦 Batch Scrape
+- 🔄 **一括処理**: 複数URLの同時スクレイピング
+- ⚡ **並行制御**: カスタマイズ可能な同時実行数
+- 🔁 **リトライ機能**: 自動エラー回復
+- ⏱️ **レート制限**: リクエスト間隔の調整
+- 📊 **進捗表示**: リアルタイム処理状況
 
 ## 🚀 クイックスタート
 
@@ -114,6 +122,30 @@ puppeteer_scrape でログイン:
 - waitFor: 2000
 ```
 
+### プロキシ使用
+
+```
+simple_scrape でプロキシ経由アクセス:
+- URL: https://example.com
+- proxy:
+  - server: "proxy.example.com:8080"
+  - username: "proxyuser"
+  - password: "proxypass"
+  - type: "http"
+```
+
+### 一括スクレイピング
+
+```
+batch_scrape で複数サイトを一括処理:
+- urls: ["https://site1.com", "https://site2.com", "https://site3.com"]
+- selector: "h1"
+- concurrency: 3
+- delay: 1000
+- maxRetries: 2
+- timeout: 30
+```
+
 ## 🛠️ API リファレンス
 
 ### simple_scrape
@@ -136,6 +168,20 @@ puppeteer_scrape でログイン:
 | `headless` | boolean | ❌ | ヘッドレスモード（デフォルト: true） |
 | `viewport` | object | ❌ | ビューポートサイズ |
 | `actions` | array | ❌ | 実行アクション |
+| `proxy` | object | ❌ | プロキシ設定 |
+
+### batch_scrape
+
+| パラメータ | 型 | 必須 | 説明 |
+|-----------|---|------|------|
+| `urls` | string[] | ✅ | スクレイピング対象URL配列 |
+| `selector` | string | ❌ | CSSセレクター |
+| `format` | `"text"` \| `"html"` | ❌ | 出力形式 |
+| `concurrency` | number | ❌ | 並行数（デフォルト: 3） |
+| `delay` | number | ❌ | リクエスト間遅延（ミリ秒） |
+| `maxRetries` | number | ❌ | 最大リトライ回数（デフォルト: 2） |
+| `timeout` | number | ❌ | タイムアウト（秒） |
+| `proxy` | object | ❌ | プロキシ設定 |
 
 ### アクション種類
 
@@ -145,6 +191,15 @@ puppeteer_scrape でログイン:
 | `type` | `selector`, `text` | `delay` | テキスト入力 |
 | `wait` | - | `delay` | 時間待機 |
 | `scroll` | - | `delay` | ページスクロール |
+
+### プロキシ設定
+
+| パラメータ | 型 | 必須 | 説明 |
+|-----------|---|------|------|
+| `server` | string | ✅ | プロキシサーバー（例: proxy.example.com:8080） |
+| `username` | string | ❌ | 認証ユーザー名 |
+| `password` | string | ❌ | 認証パスワード |
+| `type` | `"http"` \| `"https"` \| `"socks4"` \| `"socks5"` | ❌ | プロキシタイプ（デフォルト: "http"） |
 
 ## 🏗️ 開発
 
