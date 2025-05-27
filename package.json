@@ -1,5 +1,5 @@
 {
-	"name": "advanced-scraper-mcp",
+	"name": "scrapy-mcp",
 	"version": "2.0.0",
 	"description": "高機能なスクレイピングMCPサーバー（HTTP + Puppeteer対応）",
 	"main": "dist/index.js",
@@ -42,7 +42,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/your-username/advanced-scraper-mcp.git"
+		"url": "https://github.com/your-username/scrapy-mcp.git"
 	},
 	"keywords": [
 		"mcp",
@@ -55,7 +55,7 @@
 	],
 	"author": "Your Name <your.email@example.com>",
 	"bugs": {
-		"url": "https://github.com/your-username/advanced-scraper-mcp/issues"
+		"url": "https://github.com/your-username/scrapy-mcp/issues"
 	},
-	"homepage": "https://github.com/your-username/advanced-scraper-mcp#readme"
+	"homepage": "https://github.com/your-username/scrapy-mcp#readme"
 }

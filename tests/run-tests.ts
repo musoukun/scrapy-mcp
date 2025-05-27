@@ -65,7 +65,7 @@ async function runTests() {
 	const args = process.argv.slice(2);
 	const suiteName = args[0];
 
-	console.log("🧪 Advanced Scraper MCP - テストスイート");
+	console.log("🧪 Scrapy MCP - テストスイート");
 	console.log("=====================================\n");
 
 	// 利用可能なテストスイートを表示

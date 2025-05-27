@@ -1,4 +1,4 @@
-# 🚀 Advanced Scraper MCP
+# 🚀 ScrapyMCP
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -37,8 +37,8 @@
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/your-username/advanced-scraper-mcp.git
-cd advanced-scraper-mcp
+git clone https://github.com/your-username/scrapy-mcp.git
+cd scrapy-mcp
 
 # 依存関係をインストール
 npm install
@@ -57,9 +57,9 @@ npm run dev
 npm start
 ```
 
-## 🔧 Claude Desktop 設定
+## 🔧 設定
 
-Claude Desktop の設定ファイルに以下を追加：
+各種設定ファイルに以下を追加：
 
 **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
@@ -67,9 +67,9 @@ Claude Desktop の設定ファイルに以下を追加：
 ```json
 {
   "mcpServers": {
-    "advanced-scraper": {
+    "scrapy-mcp": {
       "command": "node",
-      "args": ["path/to/advanced-scraper-mcp/dist/index.js"]
+      "args": ["path/to/scrapy-mcp/dist/index.js"]
     }
   }
 }
@@ -206,7 +206,7 @@ batch_scrape で複数サイトを一括処理:
 ### プロジェクト構造
 
 ```
-advanced-scraper-mcp/
+scrapy-mcp/
 ├── src/
 │   └── index.ts          # メインソースコード
 ├── dist/                 # ビルド出力
@@ -272,8 +272,8 @@ npm run clean     # ビルドファイル削除
 
 ## 📞 サポート
 
-- 🐛 **バグ報告**: [Issues](https://github.com/your-username/advanced-scraper-mcp/issues)
-- 💡 **機能要望**: [Issues](https://github.com/your-username/advanced-scraper-mcp/issues)
+- 🐛 **バグ報告**: [Issues](https://github.com/your-username/scrapy-mcp/issues)
+- 💡 **機能要望**: [Issues](https://github.com/your-username/scrapy-mcp/issues)
 - 📧 **その他**: your.email@example.com
 
 ---
